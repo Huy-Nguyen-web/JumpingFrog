@@ -1,0 +1,174 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/CameraFollow.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Frog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sounds/352105__inspectorj__splash-jumping-e.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/640480__coolshows101sound__jumping-on-grass-6.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/landing.wav" type="AudioStream" id=6]
+
+[sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Frog/Cone 2:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -1.96045, 1.35464, -3.58046 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Frog/Cone 2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1.54804e-06, 47.587, -155.038 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Frog/Cone 22:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.772321, 1.35464, -3.60023 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Frog/Cone 22:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -2.21524e-06, 136.765, -155.038 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Frog/Cone 2:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.025, 0.3, 1 ),
+"transitions": PoolRealArray( 0.196146, 0.170755, 1 ),
+"update": 0,
+"values": [ Vector3( -1.96045, 1.35464, -3.58046 ), Vector3( -2.38787, 1.34773, -3.58328 ), Vector3( -1.96045, 1.35464, -3.58046 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Frog/Cone 2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( -0.025, 0.3, 1 ),
+"transitions": PoolRealArray( 0.196146, 0.170755, 1 ),
+"update": 0,
+"values": [ Vector3( 1.54804e-06, 47.587, -155.038 ), Vector3( 28.1283, 56.8433, -119.222 ), Vector3( 1.54804e-06, 47.587, -155.038 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Frog/Cone 22:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( -0.025, 0.3, 1 ),
+"transitions": PoolRealArray( 0.196146, 0.170755, 1 ),
+"update": 0,
+"values": [ Vector3( 0.772321, 1.35464, -3.60023 ), Vector3( 1.52362, 1.36155, -3.59741 ), Vector3( 0.772321, 1.35464, -3.60023 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Frog/Cone 22:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( -0.025, 0.3, 1 ),
+"transitions": PoolRealArray( 0.196146, 0.170755, 1 ),
+"update": 0,
+"values": [ Vector3( -2.21524e-06, 136.765, -155.038 ), Vector3( -30.6138, 127.257, -121.235 ), Vector3( -2.21524e-06, 136.765, -155.038 ) ]
+}
+
+[node name="Player" type="RigidBody" groups=["player"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5336, 0 )
+gravity_scale = 3.0
+continuous_cd = true
+contacts_reported = 1
+contact_monitor = true
+axis_lock_linear_x = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.985124, 0.171843, 0, -0.171843, 0.985124, 0, 1.63411, 5.59036 )
+fov = 60.0
+far = 500.0
+script = ExtResource( 2 )
+distance = 12.0
+height = 8.0
+
+[node name="Frog" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 0, -1.29925, -0.874912 )
+
+[node name="Cone 2" parent="Frog" index="2"]
+transform = Transform( -0.611465, 0.284637, 0.738302, -0.422017, -0.906587, -2.70184e-08, 0.669335, -0.311576, 0.67447, -1.96045, 1.35464, -3.58046 )
+
+[node name="Shape 2" parent="Frog/Cone 2" index="0"]
+transform = Transform( 0.03306, -0.933826, -0.122326, 0.0588369, 0.357587, -0.320082, 0.99772, 0.0098553, 0.0229289, -0.496036, 2.05934, -1.61695 )
+
+[node name="Cone 22" parent="Frog" index="3"]
+transform = Transform( 0.660495, -0.30746, 0.684992, -0.422017, -0.906586, 3.86632e-08, 0.621005, -0.289078, -0.728551, 0.772321, 1.35464, -3.60023 )
+
+[node name="Shape" parent="Frog/Cone 22" index="0"]
+transform = Transform( -0.035473, -0.931843, -0.124019, -0.0634815, 0.36272, -0.319295, 0.997352, -0.0100556, -0.0247342, -0.180271, 2.09324, -0.449748 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/jump = SubResource( 3 )
+
+[node name="SplashSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63925, 2.6409 )
+stream = ExtResource( 4 )
+unit_size = 10.0
+max_distance = 200.0
+
+[node name="JumpSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+unit_db = 1.0
+unit_size = 100.0
+
+[node name="LandSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 6 )
+unit_db = 20.0
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
+
+[editable path="Frog"]

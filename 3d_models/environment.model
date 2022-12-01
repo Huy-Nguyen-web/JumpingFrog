@@ -1,0 +1,20 @@
+# Made using Asset Forge (2.3.0)
+
+:materials
+
+[name:wood;color:RGBA(0.896, 0.602, 0.393, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
+[name:_defaultMat;color:RGBA(0.939, 0.953, 1.000, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.35;valueB:0.25;]
+[name:custom2;color:RGBA(1.000, 0.018, 0.018, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0.15;]
+[name:custom3;color:RGBA(0.614, 0.505, 0.505, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0.15;]
+[name:metalDark;color:RGBA(0.306, 0.388, 0.388, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
+[name:metal;color:RGBA(0.741, 0.823, 0.840, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
+[name:carpet;color:RGBA(0.943, 0.367, 0.343, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
+
+:models
+
+[name:;collection:Furniture;type:loungeChair;position:(-2.0636, 0.0500, -1.3332);rotation:(0.0000, 225.0000, 0.0000);scale:(2.0000, 2.0000, 2.0000);group:;locked:False;hidden:False;materials:carpet+wood;]
+[name:;collection:Furniture;type:tableCoffeeSquare;position:(0.6000, 0.0000, 0.4240);rotation:(0.0000, 0.0000, 0.0000);scale:(5.2000, 3.6000, 2.5200);group:;locked:False;hidden:False;materials:wood;]
+[name:;collection:Furniture;type:televisionModern;position:(-0.7000, 0.8500, 0.4500);rotation:(0.0000, 0.0000, 0.0000);scale:(1.5000, 1.5000, -1.0000);group:;locked:False;hidden:False;materials:metalDark+metal;]
+[name:;collection:Furniture;type:chairRounded;position:(-1.0000, 0.0000, 1.7000);rotation:(0.0000, 0.0000, 0.0000);scale:(3.1000, 2.4800, 3.0000);group:;locked:False;hidden:False;materials:wood;]
+[name:;collection:Primitives;type:cylinderSquare;position:(-0.7000, 0.8000, 0.8000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.3000, 0.1000, 0.3000);group:;locked:False;hidden:False;materials:custom3;]
+[name:;collection:Primitives;type:cylinderVertex;position:(-0.7000, 0.9000, 0.8000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.2000, 0.0500, 0.2000);group:;locked:False;hidden:False;materials:custom2;]
