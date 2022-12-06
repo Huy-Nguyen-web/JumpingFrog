@@ -51,7 +51,6 @@ func jump():
 	$JumpSound.play(0.3)
 	
 
-
 func _on_Player_body_entered(body):
 	on_ground = true
 	$LandSound.play(0.1)

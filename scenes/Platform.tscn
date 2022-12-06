@@ -11,13 +11,13 @@ radius = 1.10863
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 mesh = ExtResource( 2 )
 
-[node name="StaticBody" type="StaticBody" parent="." groups=["platform"]]
+[node name="KinematicBody" type="KinematicBody" parent="." groups=["platform"]]
 script = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -0.1 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
 
-[connection signal="screen_exited" from="VisibilityNotifier" to="StaticBody" method="_on_VisibilityNotifier_screen_exited"]
+[connection signal="screen_exited" from="VisibilityNotifier" to="KinematicBody" method="_on_VisibilityNotifier_screen_exited"]
